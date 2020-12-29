@@ -122,7 +122,7 @@ export default function Scene() {
               <spotLight intensity={0.3} angle={0.1} penumbra={1} position={[5, 25, 20]} />
               <Suspense fallback={<Box />}>
                 <Model position={[0, snap.responsive.xs ? 0 : 0.2,0]} />
-                <Environment files="royal.hdr" />
+                <Environment files={process.env.PUBLIC_URL + "royal.hdr"} />
                 <ContactShadows rotation-x={Math.PI / 2} position={[0, -0.5, 0]} opacity={0.25} width={10} height={10} blur={2} far={1} />
               </Suspense>
               <OrbitControls minPolarAngle={Math.PI / 4} maxPolarAngle={Math.PI / 2} enableZoom={false} enablePan={false} />
